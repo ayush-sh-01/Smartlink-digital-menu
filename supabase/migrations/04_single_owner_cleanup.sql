@@ -20,3 +20,4 @@ WHERE id = '738de8e0-55cf-460a-a96f-17973fc84ab5';
 
 -- 4. Re-enable the protection trigger
 ALTER TABLE public.restaurants ENABLE TRIGGER tr_validate_protect_restaurant_slug;
+
