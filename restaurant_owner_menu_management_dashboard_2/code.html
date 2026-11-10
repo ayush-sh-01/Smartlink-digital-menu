@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error":"#ba1a1a","secondary":"#4b6450","inverse-on-surface":"#f9efea","background":"#fff8f5","surface-tint":"#74584e","surface-variant":"#ebe0dc","primary":"#090100","on-primary-fixed":"#2a170f","tertiary":"#050300","on-surface-variant":"#504440","surface-container":"#f6ece7","surface-container-lowest":"#ffffff","surface-container-highest":"#ebe0dc","surface-bright":"#fff8f5","outline":"#827470","inverse-primary":"#e3bfb2","outline-variant":"#d3c3be","on-primary":"#ffffff","on-background":"#1f1b18","secondary-container":"#cbe7cd","primary-fixed-dim":"#e3bfb2","secondary-fixed":"#ceead0","on-secondary-container":"#506954","on-secondary-fixed-variant":"#344c39","inverse-surface":"#352f2d","on-error-container":"#93000a","on-tertiary":"#ffffff","tertiary-fixed-dim":"#e9c176","tertiary-fixed":"#ffdea5","primary-fixed":"#ffdbce","surface-dim":"#e2d8d4","on-primary-fixed-variant":"#5a4137","surface":"#fff8f5","on-tertiary-container":"#a2803c","on-error":"#ffffff","on-surface":"#1f1b18","surface-container-low":"#fcf1ed","primary-container":"#2c1810","on-primary-container":"#9e7e73","on-secondary":"#ffffff","on-tertiary-fixed":"#261900","secondary-fixed-dim":"#b2ceb5","on-tertiary-fixed-variant":"#5d4201","surface-container-high":"#f0e6e2","tertiary-container":"#291b00","on-secondary-fixed":"#082010","error-container":"#ffdad6"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","margin":"1.25rem","gutter":"1rem","space-md":"1rem","space-xl":"2.5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"display-mobile":["Playfair Display"],"label-caps":["Plus Jakarta Sans"],"headline-lg-mobile":["Playfair Display"],"display":["Playfair Display"],"headline-md":["Playfair Display"],"headline-lg":["Playfair Display"],"price-lg":["Playfair Display"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["13px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-sm":["17px",{lineHeight:"22px",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"display-mobile":["32px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-caps":["10px",{lineHeight:"14px",letterSpacing:"0.12em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"30px",letterSpacing:"0em",fontWeight:"500"}],"display":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"600"}],"headline-lg":["30px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"500"}],"price-lg":["18px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"600"}],"body-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><!-- Navigation Sidebar (Ultra-clear, minimal for any non-technical owner) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-surface-container-highest"><div class="flex flex-col"><div class="h-20 flex items-center px-space-lg gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container text-surface flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[22px] text-surface-container-lowest">restaurant</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-tight font-semibold">Brew &amp; Bloom</span><span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Menu Manager</span></div></div><div class="px-space-md py-space-sm"><nav class="space-y-1"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-3 rounded-xl transition-all bg-primary-container text-on-primary font-semibold shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span>Food Menu</a><a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md font-medium" href="#categories-section"><span class="material-symbols-outlined text-[20px]">category</span>Categories</a><a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md font-medium" href="#"><span class="material-symbols-outlined text-[20px]">qr_code_2</span>QR Codes &amp; Tables</a><a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md font-medium" href="#"><span class="material-symbols-outlined text-[20px]">storefront</span>Restaurant Details</a></nav></div></div><!-- Simple Owner Friendly Help Card at Bottom of Sidebar --><div class="p-4 m-space-md rounded-xl bg-surface-container-lowest border border-surface-container-high shadow-xs flex flex-col gap-1.5"><div class="flex items-center gap-1.5 text-secondary font-label-md font-semibold text-body-sm"><span class="text-base">💡</span> Helpful Tip</div><p class="font-body-sm text-[12px] text-on-surface-variant leading-relaxed">Any change you make here updates on customer phones in 1 second.</p></div></aside><div class="pl-64 flex flex-col min-h-screen"><!-- Top Header with Friendly Plain English Status Banner --><header class="fixed top-0 left-64 right-0 h-20 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-high"><div class="h-20 w-full px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container shadow-2xs"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-md text-body-sm font-semibold">Your menu is live on all tables • Changes save automatically</span></div></div><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-space-xs px-4 py-2 rounded-xl bg-surface-container-highest text-on-surface hover:bg-primary-container hover:text-on-primary transition-all font-label-md text-label-md shadow-sm border border-outline-variant/40" id="btnHeaderPreview"><span class="material-symbols-outlined text-[18px]">visibility</span>View Menu as Customer</button><div class="h-6 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold">Julian Croft</span><span class="font-body-sm text-body-sm text-on-surface-variant">Restaurant Owner</span></div><div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-semibold text-xs shadow-xs">JC</div></div></div></div></header><main class="relative pt-20 bg-surface flex-1 w-full px-space-xl py-space-lg"><div class="flex flex-col w-full">
+<!-- Decorative subtle ambient glow -->
+<div class="relative w-full">
+<div class="absolute -top-10 right-1/4 w-96 h-96 bg-primary-fixed/25 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 left-10 w-72 h-72 bg-secondary-fixed/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Top Welcoming Header & Obvious Big Action Buttons -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md mb-space-lg pb-space-md border-b border-surface-container-highest">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold tracking-wider">Live Table Menu</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Easy Self-Serve Menu Dashboard</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-semibold">Food &amp; Beverage Menu</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Add dishes, change prices anytime, or mark items sold out in one click.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-highest hover:bg-surface-dim text-on-surface transition-all font-label-md text-body-sm font-semibold shadow-xs border border-outline-variant/30" id="btnPreviewMobile">
+<span class="material-symbols-outlined text-[18px]">smartphone</span>
+            View Menu as Customer
+          </button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all font-label-md text-body-sm font-semibold shadow-xs border border-outline-variant/30" id="btnOpenCategoryManager">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">reorder</span>
+            Organize Categories
+          </button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-container text-surface hover:opacity-90 transition-all font-label-md text-body-sm font-bold shadow-md" id="btnOpenAddItem">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">add_circle</span>
+            + Add Food Item
+          </button>
+</div>
+</div>
+<!-- Only 3 Clear Summary Cards for Non-Technical Owners -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-2xl border border-surface-container-high shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider font-semibold">Total Menu Items</span>
+<div class="font-display text-[32px] text-primary font-bold mt-0.5 leading-none">38</div>
+<span class="font-body-sm text-body-sm text-secondary font-medium flex items-center gap-1.5 mt-1.5">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Showing on customer phones
+            </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">restaurant_menu</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-2xl border border-surface-container-high shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider font-semibold">Food Categories</span>
+<div class="font-display text-[32px] text-primary font-bold mt-0.5 leading-none">6</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 block">Starters, Mains, Drinks, etc.</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">category</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-2xl border border-surface-container-high shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider font-semibold">Out of Stock Today</span>
+<div class="font-display text-[32px] text-error font-bold mt-0.5 leading-none">3 <span class="text-xs font-normal text-on-surface-variant">items</span></div>
+<span class="font-body-sm text-body-sm text-error font-medium flex items-center gap-1.5 mt-1.5">
+<span class="material-symbols-outlined text-[16px]">do_not_disturb_on</span> Hidden or marked unavailable
+            </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-error-container/40 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">inventory_2</span>
+</div>
+</div>
+</div>
+<!-- Category Filters, Plain Search, and Friendly Dietary Buttons -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl border border-surface-container-high shadow-sm mb-space-md space-y-space-sm">
+<!-- Category Filter Tabs -->
+<div class="flex items-center justify-between gap-space-sm overflow-x-auto pb-1">
+<div class="flex items-center gap-2 shrink-0" id="categoryTabs">
+<button class="px-4 py-2 rounded-xl bg-primary-container text-surface font-label-md text-label-md shadow-xs transition-all font-semibold" data-category="all">
+              All Items (38)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all font-medium" data-category="Starters">
+              Starters (8)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all font-medium" data-category="Main Course">
+              Main Course (12)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all font-medium" data-category="Pizza &amp; Pasta">
+              Pizza &amp; Pasta (7)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all font-medium" data-category="Desserts">
+              Desserts (6)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all font-medium" data-category="Beverages">
+              Beverages (5)
+            </button>
+</div>
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-secondary hover:bg-secondary-container/40 text-xs font-semibold" id="btnQuickAddInline" onclick="document.getElementById('btnOpenAddItem').click()">
+<span class="material-symbols-outlined text-[16px]">add</span> + Add New Dish
+          </button>
+</div>
+<!-- Search Bar & Dietary Filter Buttons -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm pt-space-xs border-t border-surface-container-high">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-lg">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[20px] text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/80 border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-container-lowest" id="searchInput" placeholder="Search dishes by name (e.g. Pasta, Salad)..." type="text"/>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Dietary Filter Buttons -->
+<div class="inline-flex p-1 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<button class="filter-dietary px-3.5 py-1.5 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-xs font-bold" data-diet="all">All</button>
+<button class="filter-dietary px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-semibold" data-diet="veg">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary inline-block"></span>
+                Veg Only (🟢)
+              </button>
+<button class="filter-dietary px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-semibold" data-diet="non-veg">
+<span class="w-2.5 h-2.5 rounded-full bg-error inline-block"></span>
+                Non-Veg (🔴)
+              </button>
+</div>
+<!-- Simple Status Filter -->
+<select class="px-3.5 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none border border-outline-variant/30" id="statusFilter">
+<option value="all">Availability: All Dishes</option>
+<option value="available">Only Available</option>
+<option value="out_of_stock">Only Sold Out</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Foolproof Clear Table Header and Dish Rows -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-sm overflow-hidden mb-space-xl">
+<!-- Table Header: Plain English, zero jargon -->
+<div class="grid grid-cols-12 px-space-lg py-3.5 bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider items-center border-b border-surface-container-high">
+<div class="col-span-5 md:col-span-5 font-bold">Dish Name &amp; Photo</div>
+<div class="col-span-2 md:col-span-2 font-bold">Category</div>
+<div class="col-span-2 md:col-span-2 font-bold">Price</div>
+<div class="col-span-2 md:col-span-2 font-bold">Is it available today?</div>
+<div class="col-span-1 md:col-span-1 text-right font-bold">Actions</div>
+</div>
+<!-- Dish Item Row 1 -->
+<div class="dish-row grid grid-cols-12 px-space-lg py-4 items-center hover:bg-surface-container-low/60 transition-colors border-b border-surface-container-high" data-cat="Pizza &amp; Pasta" data-diet="veg" data-id="1" data-price="820" data-status="available">
+<div class="col-span-5 md:col-span-5 flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 shadow-xs border border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Close up gourmet presentation of handmade tagliatelle pasta generously garnished with shaved black Perigord truffles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4dHEgz8lO82PWt8mWjSbztv2OgkZthLVfGpsVHukCCXKcMFaUhfDtwMcqUd9KNe7FHVFNF9-jyWwDZjZ5mbToNiBPtGs0LKTMktbUxLpg6yLznONVmGsCp3AJ9VsA70bB9hTegVCuXmSlklLjgfmxVDa6PRYwF_Ty4mVSoEV3y2m9s1ITiEIpQJNjKz15s5woUBi4vNvJet84XHi1ZrihrxGUnEYMKHXceJBYhe8"/>
+<div class="absolute top-1 left-1 bg-surface/95 rounded-sm p-0.5 shadow-2xs">
+<div class="w-3.5 h-3.5 border border-secondary flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Wild Truffle &amp; Porcini Tagliatelle</h3>
+<span class="inline-flex px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-tertiary-fixed text-tertiary-container">Special</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Fresh egg pasta, black Périgord truffle butter, aged parmesan cheese.</p>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-medium font-body-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+<span>Pure Veg</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-body-sm font-medium">
+              Pizza &amp; Pasta
+            </span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-[19px] text-primary font-bold">₹820</span>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" onclick="quickEditPrice(1, 820)" title="Change Price">
+<span class="material-symbols-outlined text-[13px]">edit</span> Change Price
+              </button>
+</div>
+<span class="font-body-sm text-[11px] text-outline">Inclusive of taxes</span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2.5">
+<button aria-checked="true" class="availability-toggle relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-secondary" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+<span class="status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Available
+              </span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-1 flex items-center justify-end gap-1.5">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-surface transition-colors font-label-md text-xs font-semibold shadow-2xs" onclick="openEditModal(1)" title="Edit dish details">
+<span class="material-symbols-outlined text-[15px]">edit</span> Edit
+            </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Delete Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Dish Item Row 2 -->
+<div class="dish-row grid grid-cols-12 px-space-lg py-4 items-center hover:bg-surface-container-low/60 transition-colors border-b border-surface-container-high" data-cat="Starters" data-diet="veg" data-id="2" data-price="690" data-status="available">
+<div class="col-span-5 md:col-span-5 flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 shadow-xs border border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Artisanal Burrata Pugliese surrounded by charred sweet heirloom cherry tomatoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNr7-dXhhL_mXMugWmtRPmBTURXzsUxvxECRflfbQ18_VM6A-B8ckFJmDCo-KWxcZO63olQ_IjPGn39ZXYQoTwCwzcS92spdoaXDRfVNkPT0aRsiIk_NK9WfhAZWAZeh_svC0aXwPJmGOeLfltf5Jy2PyMbxiMN3yiKraOCjLP_6yDpYzQLS41ez_FDlQmNT0QVW-tk8bPpJOgcy07Y5GKc75FFExZ4OkXnpLzkQ0"/>
+<div class="absolute top-1 left-1 bg-surface/95 rounded-sm p-0.5 shadow-2xs">
+<div class="w-3.5 h-3.5 border border-secondary flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Burrata Campana &amp; Heirloom Tomato Tart</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Fresh Italian burrata cheese, sweet cherry tomatoes, olive oil, toasted sourdough bread.</p>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-medium font-body-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+<span>Pure Veg</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-body-sm font-medium">
+              Starters
+            </span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-[19px] text-primary font-bold">₹690</span>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" onclick="quickEditPrice(2, 690)" title="Change Price">
+<span class="material-symbols-outlined text-[13px]">edit</span> Change Price
+              </button>
+</div>
+<span class="font-body-sm text-[11px] text-outline">Inclusive of taxes</span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2.5">
+<button aria-checked="true" class="availability-toggle relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-secondary" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+<span class="status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Available
+              </span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-1 flex items-center justify-end gap-1.5">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-surface transition-colors font-label-md text-xs font-semibold shadow-2xs" onclick="openEditModal(2)" title="Edit dish details">
+<span class="material-symbols-outlined text-[15px]">edit</span> Edit
+            </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Delete Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Dish Item Row 3 -->
+<div class="dish-row grid grid-cols-12 px-space-lg py-4 items-center hover:bg-surface-container-low/60 transition-colors border-b border-surface-container-high" data-cat="Main Course" data-diet="non-veg" data-id="3" data-price="1150" data-status="available">
+<div class="col-span-5 md:col-span-5 flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 shadow-xs border border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Braised lamb shank resting upon a golden bed of creamy saffron polenta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH5AUplJ51iUaJIZ9jPZCwLpMoaowJCJGA0nWS8k4NW8dw9T7f5mx6Ak-Endf6HCMisty1yU4EQMs3V5g7ztE1fRihCIm3Bdcu-JfKx9E5Ra57j0-7Il-hrwpPKrYf1fbtAvUb59xWJ7kzzcbk2vkkisTqPpUgOMLCHmoSTNatFugBLj3rTrPOdxVrrCS5x3C6BHWrym1vnqEUxjDF8qiCMuXg55KRr3PyUIK8a8Q"/>
+<div class="absolute top-1 left-1 bg-surface/95 rounded-sm p-0.5 shadow-2xs">
+<div class="w-3.5 h-3.5 border border-error flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+</div>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Slow-Braised Lamb Shank with Saffron Polenta</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Tender slow-cooked lamb shank, rosemary natural gravy, creamy golden corn polenta.</p>
+<div class="flex items-center gap-1.5 mt-1 text-error font-medium font-body-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-error inline-block"></span>
+<span>Non-Veg (Lamb)</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-body-sm font-medium">
+              Main Course
+            </span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-[19px] text-primary font-bold">₹1,150</span>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" onclick="quickEditPrice(3, 1150)" title="Change Price">
+<span class="material-symbols-outlined text-[13px]">edit</span> Change Price
+              </button>
+</div>
+<span class="font-body-sm text-[11px] text-outline">Inclusive of taxes</span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2.5">
+<button aria-checked="true" class="availability-toggle relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-secondary" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+<span class="status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Available
+              </span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-1 flex items-center justify-end gap-1.5">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-surface transition-colors font-label-md text-xs font-semibold shadow-2xs" onclick="openEditModal(3)" title="Edit dish details">
+<span class="material-symbols-outlined text-[15px]">edit</span> Edit
+            </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Delete Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Dish Item Row 4 (Out of Stock / Sold out) -->
+<div class="dish-row grid grid-cols-12 px-space-lg py-4 items-center bg-surface-container-low/30 hover:bg-surface-container-low/60 transition-colors border-b border-surface-container-high opacity-85" data-cat="Starters" data-diet="non-veg" data-id="4" data-price="980" data-status="out_of_stock">
+<div class="col-span-5 md:col-span-5 flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 shadow-xs border border-surface-container-highest grayscale-[25%]">
+<img class="w-full h-full object-cover" data-alt="Plump golden pan-seared Hokkaido scallops with cauliflower puree dots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMNF9qytwHaVb_WTP7_JZP5rRyfwJ26wbllZbc38hJsW0Pm88EPUkdE9LWgOJNv3e-COgfUjVV7IavqZWlD2FgPu18waEtpHugaMKDGF0XnkAsn86vJ3Q_-rM-_-TWH9nAvxN0F5BVamtsm7p6uqNB_wX6oTwkKw7jgVfLKgchdjYNCOlRoKz3Ts2KMe7ZGLvppl3-NTgur8n6ef-ic4HPxW8eLomN_EYz2Bmd9uE"/>
+<div class="absolute top-1 left-1 bg-surface/95 rounded-sm p-0.5 shadow-2xs">
+<div class="w-3.5 h-3.5 border border-error flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+</div>
+</div>
+<div class="absolute inset-0 bg-primary/45 flex items-center justify-center">
+<span class="font-label-caps text-[10px] uppercase font-bold text-surface tracking-wider">SOLD OUT</span>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-through decoration-error/50 font-bold truncate">Pan-Seared Hokkaido Scallops</h3>
+<span class="inline-flex px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-error-container text-on-error-container">Sold Out</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Fresh wild scallops, cauliflower puree, crispy bacon bits, fresh herb garnish.</p>
+<div class="flex items-center gap-1.5 mt-1 text-error font-medium font-body-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px]">info</span> Customers cannot order this right now
+              </div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-body-sm font-medium">
+              Starters
+            </span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-[19px] text-primary font-bold">₹980</span>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" onclick="quickEditPrice(4, 980)" title="Change Price">
+<span class="material-symbols-outlined text-[13px]">edit</span> Change Price
+              </button>
+</div>
+<span class="font-body-sm text-[11px] text-outline">Inclusive of taxes</span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2.5">
+<button aria-checked="false" class="availability-toggle relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-surface-variant" role="switch" type="button">
+<span class="translate-x-0 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+<span class="status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container/50 text-on-error-container font-label-md text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Sold Out
+              </span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-1 flex items-center justify-end gap-1.5">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-surface transition-colors font-label-md text-xs font-semibold shadow-2xs" onclick="openEditModal(4)" title="Edit dish details">
+<span class="material-symbols-outlined text-[15px]">edit</span> Edit
+            </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Delete Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Dish Item Row 5 -->
+<div class="dish-row grid grid-cols-12 px-space-lg py-4 items-center hover:bg-surface-container-low/60 transition-colors border-b border-surface-container-high" data-cat="Desserts" data-diet="veg" data-id="5" data-price="540" data-status="available">
+<div class="col-span-5 md:col-span-5 flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 shadow-xs border border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Flawless mirror-glazed Valrhona 70% dark chocolate marquise geometric cube" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUsYhvobc4MktvP5aocn8LoE565AfpFwFg1ZlfZrSG0QbYervZHyyf1kP0biTUokMz9CUB26oZ22VDreDluH0dScbeAY1Nk-TLoJmJjJSGVzpQpUZLGZlHtFXMo4OZT1J-dllFDpr2Qfjedqy70molnPdr3FeAJHytyqvRFfgRC6dS1XTEa6AiC8dwN6BzxtaKqHuDfBeuIt2gBL6ccZg3ABKaHJTtRZhCJWRdRHY"/>
+<div class="absolute top-1 left-1 bg-surface/95 rounded-sm p-0.5 shadow-2xs">
+<div class="w-3.5 h-3.5 border border-secondary flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Valrhona 70% Dark Chocolate Marquise</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Rich dark chocolate mousse cake, roasted pistachios, sea salt flakes.</p>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-medium font-body-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+<span>Pure Veg</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-body-sm font-medium">
+              Desserts
+            </span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-[19px] text-primary font-bold">₹540</span>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" onclick="quickEditPrice(5, 540)" title="Change Price">
+<span class="material-symbols-outlined text-[13px]">edit</span> Change Price
+              </button>
+</div>
+<span class="font-body-sm text-[11px] text-outline">Inclusive of taxes</span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2.5">
+<button aria-checked="true" class="availability-toggle relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-secondary" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+<span class="status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Available
+              </span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-1 flex items-center justify-end gap-1.5">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-surface transition-colors font-label-md text-xs font-semibold shadow-2xs" onclick="openEditModal(5)" title="Edit dish details">
+<span class="material-symbols-outlined text-[15px]">edit</span> Edit
+            </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Delete Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Dish Item Row 6 -->
+<div class="dish-row grid grid-cols-12 px-space-lg py-4 items-center hover:bg-surface-container-low/60 transition-colors" data-cat="Beverages" data-diet="veg" data-id="6" data-price="360" data-status="available">
+<div class="col-span-5 md:col-span-5 flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 shadow-xs border border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Chilled artisanal highball glass filled with clear ice block, layered cold brew coffee atop bright ruby hibiscus botanical tonic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1BcQkJs7kCItty_csJ6Wk-tnSfAoKblpwKWhfgIAgHY_Is9L-wUbumIjHAoYtJ4V1-LYYoEnlzLu0iLo0eyowph7hx0mV_CYYwFGnvl_HQAKNIHu1ikFgdxjmpesG-1dzm4AEr0KQxIXZ3oPPcRZe7HxY1ZHNyo7KrqXbr5R6sZLkpzVKZiBGcrW0wMZ3uOMg1yk_G0x7C4uNGZxO3JHeYIz1_yqHg3GAZYSJ0QU"/>
+<div class="absolute top-1 left-1 bg-surface/95 rounded-sm p-0.5 shadow-2xs">
+<div class="w-3.5 h-3.5 border border-secondary flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Cold Brew Hibiscus Tonic</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Slow-brewed Arabica coffee, sparkling botanical hibiscus water, slice of orange.</p>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-medium font-body-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+<span>Beverage • Zero Added Sugar</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-body-sm font-medium">
+              Beverages
+            </span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-[19px] text-primary font-bold">₹360</span>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" onclick="quickEditPrice(6, 360)" title="Change Price">
+<span class="material-symbols-outlined text-[13px]">edit</span> Change Price
+              </button>
+</div>
+<span class="font-body-sm text-[11px] text-outline">Inclusive of taxes</span>
+</div>
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center gap-2.5">
+<button aria-checked="true" class="availability-toggle relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-secondary" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+<span class="status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Available
+              </span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-1 flex items-center justify-end gap-1.5">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-surface transition-colors font-label-md text-xs font-semibold shadow-2xs" onclick="openEditModal(6)" title="Edit dish details">
+<span class="material-symbols-outlined text-[15px]">edit</span> Edit
+            </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Delete Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Friendly Impossible-to-Miss "+ Add New Dish" Bottom Row / Card -->
+<div class="p-4 bg-surface-container-low/50 border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">tips_and_updates</span>
+<span>Have a new dish or seasonal special? Add it right now and guests will see it on their phones instantly.</span>
+</div>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-container text-surface hover:opacity-95 font-label-md text-body-sm font-bold shadow-sm transition-all" onclick="document.getElementById('btnOpenAddItem').click()">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">add_circle</span>
+            + Add New Dish to Menu
+          </button>
+</div>
+</div>
+<!-- Food Categories Organizer (Simple, Drag or Edit) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm mb-space-xl" id="categories-section">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-md border-b border-surface-container-high gap-space-sm">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider font-semibold">Menu Structure</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-0.5 font-bold">Food Categories</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">These control the order guests see when opening the QR code on their tables.</p>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-highest text-on-surface hover:bg-primary-container hover:text-surface transition-all font-label-md text-label-md font-semibold shadow-xs" id="btnAddNewCategoryDirect">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            + Add New Category
+          </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md mt-space-md">
+<!-- Category 1 -->
+<div class="p-space-md bg-surface rounded-xl border border-surface-container-highest flex items-center justify-between group hover:shadow-xs transition-shadow">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px]">drag_indicator</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-lg text-primary font-bold">1. Starters</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-secondary-container text-on-secondary-container">8 Items</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Small plates, soups &amp; appetizers</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Edit Category"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30" title="Delete Category"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="p-space-md bg-surface rounded-xl border border-surface-container-highest flex items-center justify-between group hover:shadow-xs transition-shadow">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px]">drag_indicator</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-lg text-primary font-bold">2. Pizza &amp; Pasta</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-secondary-container text-on-secondary-container">7 Items</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Woodfired pizzas &amp; fresh handmade pasta</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Edit Category"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30" title="Delete Category"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="p-space-md bg-surface rounded-xl border border-surface-container-highest flex items-center justify-between group hover:shadow-xs transition-shadow">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px]">drag_indicator</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-lg text-primary font-bold">3. Main Course</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-secondary-container text-on-secondary-container">12 Items</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hearty curries, steaks &amp; platters</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Edit Category"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30" title="Delete Category"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="p-space-md bg-surface rounded-xl border border-surface-container-highest flex items-center justify-between group hover:shadow-xs transition-shadow">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px]">drag_indicator</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-lg text-primary font-bold">4. Desserts</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-secondary-container text-on-secondary-container">6 Items</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cakes, pastries &amp; artisanal ice creams</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Edit Category"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30" title="Delete Category"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<!-- Category 5 -->
+<div class="p-space-md bg-surface rounded-xl border border-surface-container-highest flex items-center justify-between group hover:shadow-xs transition-shadow">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px]">drag_indicator</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-lg text-primary font-bold">5. Beverages</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-secondary-container text-on-secondary-container">5 Items</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cold coffees, fresh juices &amp; teas</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Edit Category"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30" title="Delete Category"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<!-- Category 6 -->
+<div class="p-space-md bg-surface rounded-xl border border-surface-container-highest flex items-center justify-between group hover:shadow-xs transition-shadow">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px]">drag_indicator</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-lg text-primary font-bold">6. Chef's Specials</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-caps font-semibold uppercase bg-tertiary-fixed text-tertiary-container">Special</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily tasting platters &amp; seasonal offers</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Edit Category"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30" title="Delete Category"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE-OVER DRAWER: Add / Edit Item (Ultra-simple, Plain English) -->
+<div class="fixed inset-0 z-50 bg-primary/50 backdrop-blur-xs transition-opacity opacity-0 pointer-events-none duration-200" id="itemModalOverlay">
+<div class="absolute inset-y-0 right-0 max-w-xl w-full bg-surface-container-lowest shadow-2xl flex flex-col transform translate-x-full transition-transform duration-200 ease-out border-l border-surface-container-highest" id="itemModalPanel">
+<!-- Drawer Header -->
+<div class="px-space-lg py-4 bg-surface border-b border-surface-container-high flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold tracking-wider">Simple Menu Editor</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-0.5 font-bold" id="modalTitle">Edit Dish</h2>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-colors" id="btnCloseModal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Scrollable Form Body -->
+<div class="flex-1 overflow-y-auto p-space-lg space-y-space-md">
+<!-- Photo Upload -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Dish Photo</label>
+<div class="relative border-2 border-dashed border-outline-variant hover:border-primary-container rounded-2xl p-space-md flex items-center gap-4 bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-20 h-20 rounded-xl overflow-hidden shadow-xs bg-surface-container shrink-0 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="High angle culinary editorial flatlay of dish" id="formPreviewImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvf0PtCzQKAxGtfAycEmdtiHai7nvgRbIjYZYkeNFyKYgpWp5zI51g32bT4G3My3bX6X4Ropt91b0JYwkl6aqsAQLmNBmwO8HQqQFUCIakyuoJP4bNVBnOS0Pch3ASWZsrMC6mUPJWhXpqr9M6rNAsdjnsMWQy3_6lMnqjs6_C5yvh9plvlQJaxIuEA0Hc07B7dH8Qe9CK1x3kLLCRxZTWsgao5Y3M4hIOFQLEK6o"/>
+</div>
+<div class="flex flex-col">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-highest text-primary font-label-md text-xs font-bold hover:bg-primary-container hover:text-surface transition-all w-fit" type="button">
+<span class="material-symbols-outlined text-[16px]">upload</span> Upload Photo
+              </button>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1.5">Take a photo from your phone or choose an image file (JPG or PNG).</p>
+</div>
+</div>
+</div>
+<!-- Dish Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Dish Name <span class="text-error">*</span></label>
+<input class="w-full px-space-md py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-container-lowest" id="formDishTitle" placeholder="e.g. Truffle Mushroom Pasta, Margherita Pizza..." type="text" value="Slow-Braised Lamb Shank with Saffron Polenta"/>
+</div>
+<!-- Category & Food Type (Veg / Non-Veg) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Category <span class="text-error">*</span></label>
+<select class="w-full px-space-md py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary-container" id="formCategory">
+<option value="Starters">Starters</option>
+<option selected="" value="Main Course">Main Course</option>
+<option value="Pizza &amp; Pasta">Pizza &amp; Pasta</option>
+<option value="Desserts">Desserts</option>
+<option value="Beverages">Beverages</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Food Type <span class="text-error">*</span></label>
+<div class="flex items-center gap-3 pt-1">
+<label class="flex-1 flex items-center gap-2 p-2.5 rounded-xl border border-secondary/40 bg-secondary-container/20 cursor-pointer hover:bg-secondary-container/40">
+<input class="text-secondary focus:ring-0" name="dietaryRadio" type="radio" value="veg"/>
+<span class="w-3.5 h-3.5 border border-secondary flex items-center justify-center p-0.5 rounded-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</span>
+<span class="font-label-md text-body-sm text-on-surface font-bold">Veg (🟢)</span>
+</label>
+<label class="flex-1 flex items-center gap-2 p-2.5 rounded-xl border border-error/40 bg-error-container/20 cursor-pointer hover:bg-error-container/40">
+<input checked="" class="text-error focus:ring-0" name="dietaryRadio" type="radio" value="non-veg"/>
+<span class="w-3.5 h-3.5 border border-error flex items-center justify-center p-0.5 rounded-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</span>
+<span class="font-label-md text-body-sm text-on-surface font-bold">Non-Veg (🔴)</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Price in Rupees -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Price in ₹ <span class="text-error">*</span></label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-price-lg text-[20px] text-primary font-bold">₹</span>
+<input class="w-full pl-9 pr-space-md py-3 rounded-xl bg-surface-container-low text-on-surface font-headline-sm text-headline-sm border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-container-lowest font-bold" id="formPrice" placeholder="e.g. 450" type="number" value="1150"/>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-1 block">Taxes are automatically calculated at billing.</span>
+</div>
+<!-- Short Description -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Short Description (What's in this dish?)</label>
+<textarea class="w-full p-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-container-lowest" id="formDescription" placeholder="e.g. Fresh tomatoes, basil, mozzarella on woodfired sourdough crust." rows="3">Tender slow-cooked lamb shank, rosemary natural gravy, creamy golden corn polenta.</textarea>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-1 block">Keep it simple — this is shown right on customer phones.</span>
+</div>
+<!-- Big Friendly Availability Switch Inside Form -->
+<div class="p-space-md rounded-2xl bg-surface-container border border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+<div>
+<span class="font-headline-sm text-body-md text-primary font-bold block">Available for Customers to Order</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Turn this off if the kitchen ran out of ingredients today.</p>
+</div>
+</div>
+<button aria-checked="true" class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-secondary" id="formLiveToggle" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="px-space-lg py-4 bg-surface border-t border-surface-container-high flex items-center justify-between">
+<button class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary font-label-md text-body-sm font-semibold transition-colors" id="btnCancelModal">
+          Cancel
+        </button>
+<button class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-container text-surface hover:opacity-95 font-label-md text-body-sm font-bold shadow-md transition-all" id="btnSaveModal">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">check</span>
+          Save &amp; Update Menu
+        </button>
+</div>
+</div>
+</div>
+<!-- Customer Mobile Preview Modal -->
+<div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-xs transition-opacity opacity-0 pointer-events-none duration-200 flex items-center justify-center p-4" id="previewModalOverlay">
+<div class="relative w-full max-w-sm bg-surface rounded-3xl shadow-2xl overflow-hidden border border-outline-variant/40 flex flex-col max-h-[85vh]">
+<!-- Phone Mockup Top Bar -->
+<div class="bg-primary px-space-md py-3 text-surface flex items-center justify-between shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">smartphone</span>
+<span class="font-headline-sm text-body-sm font-semibold">Customer Table View (Live)</span>
+</div>
+<button class="text-surface/80 hover:text-surface" id="btnClosePreview">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Phone Screen Body -->
+<div class="overflow-y-auto p-4 space-y-3 bg-surface-bright">
+<div class="text-center py-2 border-b border-surface-container-high">
+<span class="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant">Table #04 QR Menu</span>
+<h4 class="font-headline-md text-headline-sm text-primary font-bold">Brew &amp; Bloom</h4>
+<span class="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold">Menu is Fresh &amp; Ready</span>
+</div>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-xs border border-surface-container-high flex gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="Truffle pasta thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMpsp6twttVI8tSoWbCv01H0RBLckg3uIDrQczbuXX0CDIn1NFn0rpAT0v0g0PSzaOhFxCI4ZCuMIkhPOZlGO5yssGyW6WZraEk6fLYNKBd2-SgLgb-SwySAY_FsR65Pgl_fleJu0bGHmSGvBgMg4Wk69v7JgC5LDXUD9_-Bv4aPpB4pvlVFVs6zYIuC8kIoYF4QE7TnLLCzoVq96Wxr8afO4km4U3uyGjGE39uqM"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-headline-sm text-body-md font-bold text-primary truncate">Wild Truffle Pasta</span>
+<span class="font-price-lg text-body-md font-bold text-primary">₹820</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Fresh egg pasta with black Périgord truffle butter.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-xs border border-surface-container-high flex gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="Lamb shank thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0k25i9K3twYmum25frXn3gFUXc-5GXC4hY6qau25QXQqpZAgQ6nCB3d2HXPHy-JCqF9uYsPYzLfIV-zQ62bZaiOfTR3_diDFrghWAv6DQ6dzY2818nW0d2YbyR5j7Y0iwAZQEmAVJGi5QUv-4It3D3zEC_nf4X2viVkRsOaILO1aN2DNpygxp1hl_Sm4ZdTBcf8zwEjq5ZJJgILkrxvzrF0XQJiyJKhO5kjGRLwM"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-headline-sm text-body-md font-bold text-primary truncate">Braised Lamb Shank</span>
+<span class="font-price-lg text-body-md font-bold text-primary">₹1,150</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Tender slow-cooked lamb shank with saffron polenta.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-xs border border-surface-container-high flex gap-3 opacity-60">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-headline-sm text-body-md text-outline line-through font-semibold">Hokkaido Scallops</span>
+<span class="font-label-caps text-[10px] text-error font-bold bg-error-container/60 px-1.5 py-0.5 rounded">SOLD OUT</span>
+</div>
+<p class="font-body-sm text-[11px] text-outline mt-0.5">Kitchen is restocking. Available tomorrow.</p>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-center">
+<p class="font-body-sm text-[11px] text-on-surface-variant">Customers can tap any item to order directly to their table bill.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Auto-Save Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-primary-container text-surface px-space-md py-3 rounded-2xl shadow-xl flex items-center gap-space-sm border border-outline-variant/20" id="liveSyncToast">
+<span class="material-symbols-outlined text-[22px] text-secondary-fixed">check_circle</span>
+<div>
+<div class="font-label-md text-body-sm font-bold text-surface">Saved &amp; Updated Live!</div>
+<div class="font-body-sm text-[12px] text-surface/85" id="toastMessage">All customer table phones updated in 1 second.</div>
+</div>
+</div>
+</main></div>
+<script>
+  // Simple Vanilla Interactive Handlers for Non-Technical Restaurant Owner
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. One-click Availability Switch (Available vs Sold Out)
+    const toggles = document.querySelectorAll('.availability-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isChecked = this.getAttribute('aria-checked') === 'true';
+        const newChecked = !isChecked;
+        this.setAttribute('aria-checked', newChecked);
+
+        const circle = this.querySelector('span');
+        const row = this.closest('.dish-row');
+        const statusLabel = row ? row.querySelector('.status-label') : null;
+
+        if (newChecked) {
+          this.classList.remove('bg-surface-variant');
+          this.classList.add('bg-secondary');
+          circle.classList.remove('translate-x-0');
+          circle.classList.add('translate-x-5');
+          if (statusLabel) {
+            statusLabel.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Available';
+            statusLabel.className = 'status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold';
+          }
+          if (row) {
+            row.dataset.status = 'available';
+            row.classList.remove('opacity-85');
+            const titleEl = row.querySelector('h3');
+            if (titleEl) titleEl.classList.remove('line-through', 'decoration-error/50');
+          }
+          showToast('Dish is now available! Customers can order it immediately.');
+        } else {
+          this.classList.remove('bg-secondary');
+          this.classList.add('bg-surface-variant');
+          circle.classList.remove('translate-x-5');
+          circle.classList.add('translate-x-0');
+          if (statusLabel) {
+            statusLabel.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Sold Out';
+            statusLabel.className = 'status-label inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container/50 text-on-error-container font-label-md text-xs font-bold';
+          }
+          if (row) {
+            row.dataset.status = 'out_of_stock';
+            row.classList.add('opacity-85');
+          }
+          showToast('Marked as Sold Out. It is now hidden from customer orders.');
+        }
+      });
+    });
+
+    // 2. Add / Edit Dish Modal
+    const modalOverlay = document.getElementById('itemModalOverlay');
+    const modalPanel = document.getElementById('itemModalPanel');
+    const btnOpenAddItem = document.getElementById('btnOpenAddItem');
+    const btnCloseModal = document.getElementById('btnCloseModal');
+    const btnCancelModal = document.getElementById('btnCancelModal');
+    const btnSaveModal = document.getElementById('btnSaveModal');
+    const modalTitle = document.getElementById('modalTitle');
+
+    function openModal(isEdit = false, dishName = '') {
+      modalTitle.textContent = isEdit ? `Edit Dish: ${dishName}` : '+ Add New Dish to Menu';
+      modalOverlay.classList.remove('pointer-events-none', 'opacity-0');
+      modalOverlay.classList.add('opacity-100');
+      modalPanel.classList.remove('translate-x-full');
+      modalPanel.classList.add('translate-x-0');
+    }
+
+    function closeModal() {
+      modalOverlay.classList.add('opacity-0', 'pointer-events-none');
+      modalOverlay.classList.remove('opacity-100');
+      modalPanel.classList.add('translate-x-full');
+      modalPanel.classList.remove('translate-x-0');
+    }
+
+    if (btnOpenAddItem) {
+      btnOpenAddItem.addEventListener('click', () => {
+        document.getElementById('formDishTitle').value = '';
+        document.getElementById('formPrice').value = '';
+        document.getElementById('formDescription').value = '';
+        openModal(false);
+      });
+    }
+
+    btnCloseModal.addEventListener('click', closeModal);
+    btnCancelModal.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    btnSaveModal.addEventListener('click', () => {
+      const name = document.getElementById('formDishTitle').value.trim() || 'New Dish';
+      closeModal();
+      showToast(`"${name}" saved and updated on customer phones!`);
+    });
+
+    window.openEditModal = function(id) {
+      const row = document.querySelector(`.dish-row[data-id="${id}"]`);
+      if (row) {
+        const title = row.querySelector('h3').innerText.trim();
+        const price = row.dataset.price;
+        const cat = row.dataset.cat;
+        document.getElementById('formDishTitle').value = title;
+        document.getElementById('formPrice').value = price;
+        if (cat) document.getElementById('formCategory').value = cat;
+        openModal(true, title);
+      }
+    };
+
+    // Quick price editing prompt
+    window.quickEditPrice = function(id, currentPrice) {
+      const newPrice = prompt(`Enter new price in ₹ (current: ₹${currentPrice}):`, currentPrice);
+      if (newPrice !== null && !isNaN(newPrice) && newPrice.trim() !== '') {
+        const row = document.querySelector(`.dish-row[data-id="${id}"]`);
+        if (row) {
+          row.dataset.price = newPrice;
+          const priceDisplay = row.querySelector('.font-price-lg');
+          if (priceDisplay) priceDisplay.textContent = `₹${newPrice}`;
+          showToast(`Price updated to ₹${newPrice}. Changes are live!`);
+        }
+      }
+    };
+
+    // 3. Customer Mobile View Modal
+    const previewOverlay = document.getElementById('previewModalOverlay');
+    const btnPreviewMobile = document.getElementById('btnPreviewMobile');
+    const btnHeaderPreview = document.getElementById('btnHeaderPreview');
+    const btnClosePreview = document.getElementById('btnClosePreview');
+
+    function openCustomerPreview() {
+      previewOverlay.classList.remove('pointer-events-none', 'opacity-0');
+      previewOverlay.classList.add('opacity-100');
+    }
+
+    if (btnPreviewMobile) btnPreviewMobile.addEventListener('click', openCustomerPreview);
+    if (btnHeaderPreview) btnHeaderPreview.addEventListener('click', openCustomerPreview);
+    if (btnClosePreview) {
+      btnClosePreview.addEventListener('click', () => {
+        previewOverlay.classList.add('pointer-events-none', 'opacity-0');
+        previewOverlay.classList.remove('opacity-100');
+      });
+    }
+
+    previewOverlay.addEventListener('click', (e) => {
+      if (e.target === previewOverlay) {
+        previewOverlay.classList.add('pointer-events-none', 'opacity-0');
+        previewOverlay.classList.remove('opacity-100');
+      }
+    });
+
+    // 4. Category Tabs and Search Filters
+    const categoryButtons = document.querySelectorAll('#categoryTabs button');
+    const searchInput = document.getElementById('searchInput');
+    const dietaryButtons = document.querySelectorAll('.filter-dietary');
+    const statusFilter = document.getElementById('statusFilter');
+    const dishRows = document.querySelectorAll('.dish-row');
+
+    let currentCat = 'all';
+    let currentDiet = 'all';
+    let currentStatus = 'all';
+    let searchQuery = '';
+
+    function filterRows() {
+      dishRows.forEach(row => {
+        const cat = row.dataset.cat;
+        const diet = row.dataset.diet;
+        const status = row.dataset.status;
+        const text = row.innerText.toLowerCase();
+
+        const matchCat = (currentCat === 'all') || (cat === currentCat);
+        const matchDiet = (currentDiet === 'all') || (diet === currentDiet);
+        const matchStatus = (currentStatus === 'all') || (status === currentStatus);
+        const matchSearch = text.includes(searchQuery.toLowerCase());
+
+        if (matchCat && matchDiet && matchStatus && matchSearch) {
+          row.style.display = 'grid';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-surface', 'font-semibold');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary-container', 'text-surface', 'font-semibold');
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        currentCat = btn.dataset.category;
+        filterRows();
+      });
+    });
+
+    dietaryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        dietaryButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs', 'font-bold');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs', 'font-bold');
+        btn.classList.remove('text-on-surface-variant');
+        currentDiet = btn.dataset.diet;
+        filterRows();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        filterRows();
+      });
+    }
+
+    if (statusFilter) {
+      statusFilter.addEventListener('change', (e) => {
+        currentStatus = e.target.value;
+        filterRows();
+      });
+    }
+
+    // 5. Plain English Toast Notification
+    const toast = document.getElementById('liveSyncToast');
+    const toastMsg = document.getElementById('toastMessage');
+    let toastTimeout;
+    function showToast(message) {
+      if (message && toastMsg) {
+        toastMsg.textContent = message;
+      }
+      clearTimeout(toastTimeout);
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    // 6. Category Management Direct Prompt
+    const btnDirectCat = document.getElementById('btnAddNewCategoryDirect');
+    const btnOpenCategoryManager = document.getElementById('btnOpenCategoryManager');
+    function promptAddCategory() {
+      const catName = prompt('Enter a new category name (e.g. Soups, Breakfast, Chef Specials):');
+      if (catName && catName.trim()) {
+        showToast(`Category "${catName.trim()}" created! You can now add dishes to it.`);
+      }
+    }
+    if (btnDirectCat) btnDirectCat.addEventListener('click', promptAddCategory);
+    if (btnOpenCategoryManager) {
+      btnOpenCategoryManager.addEventListener('click', () => {
+        const catSec = document.getElementById('categories-section');
+        if (catSec) catSec.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+</script></body></html>

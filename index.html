@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>SmartLink - Digital Menu Management System</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'surface': '#fff8f1',
+              'surface-dim': '#e5d9c3',
+              'surface-bright': '#fff8f1',
+              'surface-container-lowest': '#ffffff',
+              'surface-container-low': '#fff2dc',
+              'surface-container': '#f9edd6',
+              'surface-container-high': '#f3e7d0',
+              'surface-container-highest': '#ede1cb',
+              'on-surface': '#211b0d',
+              'on-surface-variant': '#424844',
+              'outline': '#727974',
+              'outline-variant': '#c2c8c2',
+              'primary': '#082519',
+              'on-primary': '#ffffff',
+              'primary-container': '#1f3b2e',
+              'on-primary-container': '#87a594',
+              'secondary': '#6a5584',
+              'on-secondary': '#ffffff',
+              'secondary-container': '#e0c7fe',
+              'on-secondary-fixed': '#24123c',
+              'tertiary': '#3f1101',
+              'tertiary-container': '#5b2611',
+              'error': '#ba1a1a',
+              'error-container': '#ffdad6',
+              'background': '#fff8f1',
+              'on-background': '#211b0d'
+            },
+            fontFamily: {
+              'serif': ['"Playfair Display"', 'serif'],
+              'sans': ['"Plus Jakarta Sans"', 'sans-serif']
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #fff8f1;
+        color: #211b0d;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .font-serif {
+        font-family: 'Playfair Display', serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

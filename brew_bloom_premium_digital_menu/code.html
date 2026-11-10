@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed": "#ceead0", "on-tertiary-container": "#a2803c", "primary-fixed": "#ffdbce", "surface": "#fff8f5", "surface-container-low": "#fcf1ed", "surface-container-lowest": "#ffffff", "surface-container-high": "#f0e6e2", "background": "#fff8f5", "secondary-container": "#cbe7cd", "outline-variant": "#d3c3be", "inverse-primary": "#e3bfb2", "inverse-on-surface": "#f9efea", "on-primary-container": "#9e7e73", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#5d4201", "tertiary-container": "#291b00", "surface-bright": "#fff8f5", "on-secondary-container": "#506954", "primary-fixed-dim": "#e3bfb2", "surface-variant": "#ebe0dc", "tertiary-fixed": "#ffdea5", "secondary": "#4b6450", "error": "#ba1a1a", "primary": "#090100", "tertiary-fixed-dim": "#e9c176", "on-secondary-fixed-variant": "#344c39", "surface-container": "#f6ece7", "outline": "#827470", "on-secondary": "#ffffff", "on-surface": "#1f1b18", "on-secondary-fixed": "#082010", "surface-dim": "#e2d8d4", "surface-container-highest": "#ebe0dc", "on-primary-fixed-variant": "#5a4137", "inverse-surface": "#352f2d", "on-error-container": "#93000a", "secondary-fixed-dim": "#b2ceb5", "on-tertiary-fixed": "#261900", "tertiary": "#050300", "on-primary": "#ffffff", "on-surface-variant": "#504440", "primary-container": "#2c1810", "on-tertiary": "#ffffff", "surface-tint": "#74584e", "on-primary-fixed": "#2a170f", "on-error": "#ffffff", "on-background": "#1f1b18" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "gutter": "1rem", "margin": "1.25rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem" }, fontFamily: { "headline-lg-mobile": ["Playfair Display"], "display": ["Playfair Display"], "headline-lg": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "price-lg": ["Playfair Display"], "headline-md": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "display-mobile": ["Playfair Display"], "body-sm": ["Plus Jakarta Sans"], "label-caps": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "500" }], "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "price-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["17px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Brew & Bloom Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrB_imgeZhttiK31JRff756J-P2sXM6oNzeDLC-iI84tlI6h1uBs9FVA0VY21ZAdH7qJAXiouMTsFS1wcGH3X3SS1XqYXcj99JayZvu-kwuBI-biEphsZPziONx76tT3opQYRUAdLXQ6QlcOM5hiqun2ryscd_GJnx9rH2r5Fq0z56dOmY4emy-o25Ek1kJfjMF6fbIMuleies2SAMafSkTG37pi-m714lPUcMgAUo4z"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary-container tracking-tight leading-none">Brew & Bloom</span><span class="font-label-caps text-label-caps text-on-tertiary-container uppercase tracking-widest mt-0.5">Atelier & Glasshouse</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high/80"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-caps text-label-caps text-primary uppercase font-bold">Table 04</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-24"><div class="flex flex-col w-full text-on-surface">
+<!-- Ambience & Table Welcome Header Panel -->
+<section class="w-full px-margin pt-3 pb-4 bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0 animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-bold truncate">Table 04 • Indoor Veranda</span>
+</div>
+<div class="flex items-center gap-1 shrink-0 bg-surface-container-highest px-2 py-0.5 rounded-full text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
+<span>Open till 11:30 PM</span>
+</div>
+</div>
+<div class="flex flex-col mb-3">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary-container tracking-tight leading-snug">
+        Good Food. Beautiful Moments.
+      </h1>
+<div class="flex items-center gap-1.5 mt-0.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>(840+ reviews)</span>
+<span class="text-outline-variant">•</span>
+<span class="truncate">Indiranagar, Bangalore</span>
+</div>
+</div>
+<!-- Quick Utility Action Bar -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm active:scale-95 transition-transform min-h-[44px]" onclick="handleServiceCall(this)">
+<span class="material-symbols-outlined text-[18px] text-secondary">concierge</span>
+<span class="font-label-md text-label-md font-semibold">Call Steward</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm active:scale-95 transition-transform min-h-[44px]" onclick="copyWifi(this)">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">wifi</span>
+<span class="font-label-md text-label-md font-semibold truncate" id="wifi-label">WiFi Details</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform min-h-[44px]" onclick="openBillSummary()">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">receipt_long</span>
+<span class="font-label-md text-label-md font-semibold">Table Bill</span>
+</button>
+</div>
+</section>
+<!-- Editorial Hero Visual Section -->
+<section class="w-full px-margin mt-4">
+<div class="relative w-full rounded-xl overflow-hidden bg-primary-container shadow-md">
+<div class="relative w-full h-48 bg-cover bg-center" data-alt="An editorial close-up photograph of an artisanal wild truffle hand-rolled pasta dish garnished with fresh shaved black Périgord truffle and Parmigiano Reggiano crisps, beside a velvety single-estate pour-over glass carafe on a warm linen café table with golden botanical afternoon light streaming through glasshouse windows, serene luxury bistro aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACOMrrws-QOxw594bW2vRa-Jr41KoB7WltLivuo8UGc0bwcT-6j5KDbR8ojpettCSf7QPsWh6a8JehWFV1Djyqy5__uCO47lomR1ZHpj-HnupberuZWDq5y_9U-F5_X39Nnv-znbFfq7eAzoL0nn2oi4flezYhwfoX2n3rAyyL4ZvNs7AoqsY5NF5Tpl4se3PY7OuTdmKJt1R7O_dhMCuxFe0Lwzt1WwCKkCdbWCM')">
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/40 to-transparent"></div>
+<div class="absolute top-3 left-3 bg-secondary-fixed/90 backdrop-blur-md px-2.5 py-1 rounded-full flex items-center gap-1 text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">Organic Harvest</span>
+</div>
+</div>
+<div class="p-4 bg-primary-container text-surface-container-lowest">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-tertiary-fixed font-bold">Summer Atelier Selection</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mt-0.5 text-surface tracking-tight">
+          Discover Something Delicious.
+        </h2>
+<p class="font-body-md text-body-md text-inverse-on-surface/85 mt-1.5 leading-relaxed">
+          Crafted with locally foraged botanicals, heirloom grains, and single-estate roast beans. Designed to be savored slowly.
+        </p>
+<!-- Live Announcement Pill -->
+<div class="mt-3 flex items-start gap-2 p-2.5 rounded-lg bg-surface-container-lowest/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed shrink-0 mt-0.5">auto_awesome</span>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim leading-snug">
+<strong class="text-tertiary-fixed font-semibold">Chef Sanjeev's Feature:</strong> Seasonal Truffle & Wild Morel Festival is live this evening.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Sticky Category Navigator -->
+<section class="sticky top-16 z-30 w-full bg-surface/95 backdrop-blur-md pt-3 pb-2 px-margin shadow-[0_4px_16px_rgba(0,0,0,0.02)]">
+<!-- Course Pills -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1" id="category-pills">
+<button class="category-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all bg-primary-container text-surface-container-lowest shadow-sm" onclick="filterCategory('all', this)">
+        All (42)
+      </button>
+<button class="category-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" onclick="filterCategory('breakfast', this)">
+        Breakfast
+      </button>
+<button class="category-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" onclick="filterCategory('starters', this)">
+        Starters
+      </button>
+<button class="category-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" onclick="filterCategory('mains', this)">
+        Main Course
+      </button>
+<button class="category-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" onclick="filterCategory('pasta', this)">
+        Pizza & Pasta
+      </button>
+<button class="category-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" onclick="filterCategory('desserts', this)">
+        Pâtisserie
+      </button>
+<button class="category-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" onclick="filterCategory('beverages', this)">
+        Cold Drip & Roastery
+      </button>
+</div>
+<!-- Quick Dietary Filter Chips -->
+<div class="flex items-center gap-2 mt-2 pt-1 overflow-x-auto no-scrollbar">
+<button class="dietary-filter flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-caps text-label-caps uppercase transition-colors shrink-0" onclick="toggleDietaryFilter('veg', this)">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary inline-block"></span>
+<span class="font-bold">Veg Only</span>
+</button>
+<button class="dietary-filter flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase transition-colors shrink-0" onclick="toggleDietaryFilter('nonveg', this)">
+<span class="w-2.5 h-2.5 rounded-full bg-error inline-block"></span>
+<span class="font-bold">Non-Veg</span>
+</button>
+<button class="dietary-filter flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-tertiary-container font-label-caps text-label-caps uppercase transition-colors shrink-0" onclick="toggleDietaryFilter('special', this)">
+<span class="material-symbols-outlined text-[13px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">Chef's Reserve</span>
+</button>
+</div>
+</section>
+<!-- Section: Chef's Curated Selection (Horizontal Editorial Carousel) -->
+<section class="w-full mt-4">
+<div class="px-margin flex items-baseline justify-between mb-2">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-tertiary-container font-bold">Atelier Signatures</span>
+<h3 class="font-headline-md text-headline-md text-primary-container tracking-tight">Chef's Curated Selection</h3>
+</div>
+<span class="font-label-md text-label-md text-secondary font-semibold">3 Specialties</span>
+</div>
+<!-- Scrollable Cards -->
+<div class="flex gap-3 overflow-x-auto px-margin pb-2 pt-1 no-scrollbar snap-x snap-mandatory">
+<!-- Feature Card 1 -->
+<article class="min-w-[280px] max-w-[290px] snap-center shrink-0 rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container-high mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Close up gourmet plating of wild truffle and porcini tagliatelle with hand rolled fresh ribbons, deep brown umami sauce, shaved black truffle slices, and micro greens on a handcrafted terracotta ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDln-6wrNQZT0eNtfOPCGd4KtPLKQWJ2SKC8KwZ0xJTfkvEfO-bDMvCcY76XKyDNqN35zStIDi1sHMCbvllGuQNGtQhsqBg409JJ_3JcjgttxWC45svdIYfmEUilJ8h3fMLgh7pszAoB3rwS0x2lahLkLKrsSSg3SR0R5auBkEhnMc6CmgfQ_wZGpQoot-r7e175aTMDVgbdg1teqPiibR8Va3ga7Bh4ApfIOh4Bjo"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-secondary font-label-caps text-label-caps uppercase font-bold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Veg
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps uppercase font-bold flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">hotel_class</span> Spec
+              </span>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-primary-container/80 backdrop-blur-sm text-surface font-label-caps text-label-caps uppercase">Bestseller</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Wild Truffle & Porcini Tagliatelle</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+            Hand-rolled egg pasta, shaved black Périgord truffle, aged Parmigiano Reggiano crisp, cultured butter emulsion.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2">
+<span class="font-price-lg text-price-lg text-primary-container font-semibold">₹820</span>
+<button class="flex items-center gap-1 py-1.5 px-3 rounded-full bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform" onclick="addToOrder('Wild Truffle Tagliatelle', 820)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-md text-label-md font-semibold">Add</span>
+</button>
+</div>
+</article>
+<!-- Feature Card 2 -->
+<article class="min-w-[280px] max-w-[290px] snap-center shrink-0 rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container-high mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Norwegian smoked salmon on toasted golden butter brioche toast topped with creamy piped Meyer lemon whipped ricotta, edible flowers, and dark caperberry dust on artisan stoneware plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBoVZJqMyLzUuTVWiBTlyHwrCvOjuGhrth9YdMhN2YsPvQ13TQDKV2GqkFTeu7n1A6vdyCluOjVSc6XM9Y8q9VSR_iIFA846ufE2MQ8cC_DILmvGmfz9nr-dfoJ3TCTrJ4xQNabmvmFOiUr9gg0awNEQRbzmfWMHSIwOPcl4Pm1lWhgpLIMUgA4wSpCTTUroZtihr7XfiEb5gBhzU-mp3m48_ERMgQnwhDlOeiWq4"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-error font-label-caps text-label-caps uppercase font-bold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Non-Veg
+              </span>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-secondary/85 backdrop-blur-sm text-on-secondary font-label-caps text-label-caps uppercase font-bold">Signature</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Smoked Salmon & Hass Avocado Brioche</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+            Norwegian wood-smoked salmon, Meyer lemon whipped ricotta, caperberry dust on house-baked toasted brioche.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2">
+<span class="font-price-lg text-price-lg text-primary-container font-semibold">₹740</span>
+<button class="flex items-center gap-1 py-1.5 px-3 rounded-full bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform" onclick="addToOrder('Smoked Salmon Brioche', 740)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-md text-label-md font-semibold">Add</span>
+</button>
+</div>
+</article>
+<!-- Feature Card 3 -->
+<article class="min-w-[280px] max-w-[290px] snap-center shrink-0 rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container-high mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Artisanal slow drip cold coffee in a crystal ribbed glass with a single oversized clear ice sphere, garnished with delicate fresh night blooming jasmine flowers on a marble cafe counter with brass spoon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-jQoS7f5q73vQLu42LmJY1NQtMk73-NErXR_5ccbHOaM0zBNaWMqFQEJIxhR3NTblfPkqN2yTjAE7DgfMsGD65xy66tCZAcMINqybzdiCVbB5-U9-4KNw5fvnWWj2zoZs80L9YHe3q4XVFGWXt9xFxbo2ezEtyE-CuZv3z3yvIANenRgdtTb1OzME8B1CIyNMRN4c9EKFa5BoU5PsoU2opspkas20YlEilPIfRlI"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-secondary font-label-caps text-label-caps uppercase font-bold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Veg
+              </span>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-on-tertiary-container/85 backdrop-blur-sm text-surface font-label-caps text-label-caps uppercase font-bold">16h Extraction</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Kyoto Cold Drip & Jasmine Blossom</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+            16-hour slow extracted Yirgacheffe beans infused with organic night-blooming jasmine flowers and orange peel.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2">
+<span class="font-price-lg text-price-lg text-primary-container font-semibold">₹380</span>
+<button class="flex items-center gap-1 py-1.5 px-3 rounded-full bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform" onclick="addToOrder('Kyoto Cold Drip Coffee', 380)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-md text-label-md font-semibold">Add</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Sommelier & Barista Seasonal Pairing Banner -->
+<section class="w-full px-margin mt-4">
+<div class="relative p-4 rounded-xl bg-surface-container-low shadow-sm overflow-hidden">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-fixed">wine_bar</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-tertiary-container font-bold">Sommelier Pairing Experience</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary-container mt-0.5">Seasonal Cellar & Roastery Harmony</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">
+            Pair any artisanal handmade pasta with our botanical shrub mocktail or house reserve pour-over for a curated degustation sequence.
+          </p>
+<div class="mt-2.5 flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-secondary font-bold uppercase bg-secondary-container px-2 py-0.5 rounded">Complimentary Amuse-Bouche Included</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categorized Menu Registry -->
+<section class="w-full px-margin mt-5 flex flex-col gap-5" id="menu-items-container">
+<!-- Category Header: Small Plates & Starters -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight">Small Plates & Starters</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Antipasti</span>
+</div>
+<!-- State A: Normal Available Item -->
+<article class="w-full rounded-xl bg-surface-container-lowest p-3.5 shadow-sm flex flex-col gap-2.5 transition-all">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shrink-0"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Pure Vegetarian</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Contains Dairy</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary leading-snug">Burrata Campana & Heirloom Tomato Tart</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            Creamy Puglia burrata, balsamic caviar, basil oil pearls, on a flaky butter puff crust with smoked sea salt.
+          </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-caps text-label-caps bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Mild Spice</span>
+<span class="font-label-caps text-label-caps bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Heirloom Crop</span>
+</div>
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Artisanal heirloom tomato tart with fresh white burrata ball sliced open showing creamy interior, basil oil droplets and balsamic glaze on rustic golden baked crust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWh8Ekliwto_AR1npJCgBofsTDk-aLhhGGxusLqhM2xeSG-aTWIOZB74DRJ7erCz77TrDJSjAvdz4A7ofdT751YrX-EZ3H5hjEAL8Nh7KDAgmMPOdx4wC0oMm6PAniazonsp5Xi3YBngm7SH-SM1vqfQJYlM4Fc4PYwZcEJAtJ-5COEc3XFyAfcRb1pjY3Z8SYd8RBKc3DD7DGukB8kIithA1odQe9Qf1F-lT0Asg"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-baseline gap-1">
+<span class="font-price-lg text-price-lg text-primary-container font-semibold">₹690</span>
+<span class="font-body-sm text-body-sm text-outline">tax incl.</span>
+</div>
+<button class="flex items-center gap-1 py-1.5 px-3 rounded-full bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform min-h-[38px]" onclick="addToOrder('Burrata Campana Tart', 690)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-md text-label-md font-semibold">Add to Table</span>
+</button>
+</div>
+</article>
+<!-- Category Header: Mains -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight">Mains & Hearth Specialties</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Secondi</span>
+</div>
+<!-- State B: Bestseller Item with Sommelier Pairing & Customization Note -->
+<article class="w-full rounded-xl bg-surface-container-lowest p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-error shrink-0"></span>
+<span class="font-label-caps text-label-caps uppercase text-error font-bold">Non-Veg</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-tertiary-container bg-tertiary-fixed/40 px-1.5 py-0.5 rounded">Chef's Bestseller</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary leading-snug">Slow-Braised Lamb Shank with Saffron Polenta</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            8-hour braised New Zealand shank, rosemary pan-jus reduction, creamy mascarpone saffron polenta, and gremolata.
+          </p>
+<!-- Sommelier Pairing Note Sub-Card -->
+<div class="mt-2.5 p-2 rounded-lg bg-surface-container-high/60 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container shrink-0">local_bar</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-primary font-semibold">Sommelier:</strong> Pairs with 2021 Chianti Classico Riserva.
+            </p>
+</div>
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Slow braised tender lamb shank bone-in resting on a bed of vivid golden yellow saffron polenta with deep rich glossy rosemary jus reduction, food styling in high end bistro setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQSpG_5Fk0OagPkE98KuvgvX0TE0ycJ12wFmamj_j8Hh8aun6n0dzqIA6ZYpZdoxKMfambdhXeNXhX3qD6YCrLjKfY-_On-ILmZS-3gewou_zDu-IlaeleVOQb2FtwcJqgjySg_CxQ26JogZ6uQBVxVIzi3_yW1LfifrinaXkB7sXVhrp6UFQNg_UjtLj3Sp_ZhvO95Q4sjeHlsQXQtAFc7XXkyzxUBiZIlv2G1yA"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-baseline gap-1">
+<span class="font-price-lg text-price-lg text-primary-container font-semibold">₹1,150</span>
+<span class="font-body-sm text-body-sm text-outline">tax incl.</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 py-1.5 px-3 rounded-full bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform min-h-[38px]" onclick="addToOrder('Slow-Braised Lamb Shank', 1150)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-md text-label-md font-semibold">Add to Table</span>
+</button>
+</div>
+</div>
+</article>
+<!-- State C: Out-of-Stock Item (Visually Graceful & Dignified) -->
+<article class="w-full rounded-xl bg-surface-container-low/70 p-3.5 shadow-none flex flex-col gap-2.5 opacity-80">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-error shrink-0"></span>
+<span class="font-label-caps text-label-caps uppercase text-error font-bold">Non-Veg</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-caps text-label-caps bg-surface-container-highest text-on-surface-variant px-1.5 py-0.5 rounded font-bold">Sold Out Today</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface/70 leading-snug">Pan-Seared Hokkaido Scallops</h4>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-relaxed">
+            Cauliflower silk purée, hazelnut brown butter emulsion, sea asparagus, and compressed green apple matchsticks.
+          </p>
+<!-- Return Note & Chef Alternate Suggestion -->
+<div class="mt-2.5 p-2 rounded-lg bg-surface-container flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[14px]">event_busy</span>
+<span>Returns Fresh Tomorrow at 12:00 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+<strong class="font-semibold">Chef’s Alternate:</strong> Try the Garlic Herb Tiger Prawns (Available).
+            </p>
+</div>
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-high relative grayscale contrast-75">
+<img class="w-full h-full object-cover" data-alt="Plated golden pan seared sea scallops on creamy white cauliflower puree with herbs and browned butter dressing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZBfIvEC_h_G9vc1f5DUazamdluGxWYwJiMdRmzUTe52G5MR2DD89pLWyoAjvNZvmaLFmV5ZIPTlSXQxt_CXjOdwMTDpIKLWJoouff3jaWrhM2BUcfX95dW_iJiW1GbKmFZkd3oNO3Wo-_9MrRyPZsfkvEjsQ4HDoB0HzyFA6opX1O6pp8S6OA1_vRr1t8j1htVH71k9W60r-vn2RNb1Nz-P74iLJ6jN4l0OTLQ94"/>
+<div class="absolute inset-0 bg-surface-dim/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px] text-on-surface">lock</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-price-lg text-price-lg text-outline font-semibold">₹980</span>
+<button class="py-1.5 px-3 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md font-semibold min-h-[38px] active:scale-95 transition-transform flex items-center gap-1" onclick="notifyAvailability('Hokkaido Scallops')">
+<span class="material-symbols-outlined text-[15px]">notifications</span>
+<span>Notify Kitchen</span>
+</button>
+</div>
+</article>
+<!-- Category Header: Desserts & Atelier Pâtisserie -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight">Atelier Pâtisserie</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Dolci</span>
+</div>
+<!-- State D1: Valrhona Dark Chocolate Marquise -->
+<article class="w-full rounded-xl bg-surface-container-lowest p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shrink-0"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Pure Vegetarian</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-tertiary-container bg-tertiary-fixed/30 px-1.5 py-0.5 rounded">Valrhona Grand Cru</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary leading-snug">Valrhona 70% Dark Chocolate & Hazelnut Marquise</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            24k edible gold leaf fleck, single-origin espresso crème anglaise, roasted Piedmont hazelnut praline crunch.
+          </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-caps text-label-caps bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Contains Nuts</span>
+<span class="font-label-caps text-label-caps bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Gluten Free</span>
+</div>
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Decadent slice of dark chocolate marquise cake with edible 24k gold leaf flakes, hazelnut crunch base, and pool of creamy vanilla bean espresso anglaise on matte dark plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbOJPFXxXnKJ5Jco1CM688NYMyJO0nnBJCi7ayiv4dHqcJ6dx5hmrWK-2XWlkShtMNt7pAV2WjE76ZgVzRV7bekDcbv7HSA0-yqBaeUeze1dF0dVZo7mz-d5tGid8wvuPTZ3pmx8v2ngvY7tCrWAvgxMLU0442gnlnVHLsREnhd3OfPm9-TbkBpi7RYoaoh09lWWHIsUaMHp3D-FMMevO--9Cgv7RqLyiTEmwvN4Q"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-price-lg text-price-lg text-primary-container font-semibold">₹540</span>
+<button class="flex items-center gap-1 py-1.5 px-3 rounded-full bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform min-h-[38px]" onclick="addToOrder('Valrhona Chocolate Marquise', 540)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-md text-label-md font-semibold">Add to Table</span>
+</button>
+</div>
+</article>
+<!-- State D2: Madagascan Vanilla Bean Panna Cotta -->
+<article class="w-full rounded-xl bg-surface-container-lowest p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shrink-0"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Pure Vegetarian</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container px-1.5 py-0.5 rounded font-bold">Botanical Infusion</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary leading-snug">Madagascan Vanilla Bean & Wild Berry Panna Cotta</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            Velvety cooked cream with organic vanilla bean specks, tart wild berry hibiscus coulis, and crystallised rose petals.
+          </p>
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Silky smooth vanilla bean panna cotta in a clear coupe glass topped with crimson hibiscus and wild blackberry coulis and delicate candied rose petals on a linen napkin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMynhsaWKRcVP9EhlH0WRMmbXyRZah--MOcxRsm3uOe43XosO6o3TMz2z1C1tuSc0ME8z67R2z8jh3FBCBHIGg7lZDhaLsBBwIPHspZig7wk_evIHuqENcQj0zAx4DzqYvdbRkuYqPoMs0uykwQ-r3pfKn1q5dnJ0PWoWQ5sUfM0qSJz0TiSgHuBjSVhvSMvHpXR1dYC6xDjAYUl0rJ9PSxtdQF83_bGL5MJmSoZI"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-price-lg text-price-lg text-primary-container font-semibold">₹490</span>
+<button class="flex items-center gap-1 py-1.5 px-3 rounded-full bg-primary-container text-surface-container-lowest shadow-sm active:scale-95 transition-transform min-h-[38px]" onclick="addToOrder('Vanilla Bean Panna Cotta', 490)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-md text-label-md font-semibold">Add to Table</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Live Dining Cart / Table Tray Floating Dock -->
+<aside class="fixed bottom-20 left-0 right-0 z-40 px-margin flex justify-center pointer-events-none transition-all duration-300 transform translate-y-24 opacity-0" id="table-tray-dock">
+<div class="w-full max-w-md bg-primary-container text-surface-container-lowest p-3 rounded-xl shadow-xl flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-label-md" id="tray-count">
+          0
+        </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-surface">Table 04 Order Tray</span>
+<span class="font-body-sm text-body-sm text-tertiary-fixed-dim" id="tray-total">₹0 total</span>
+</div>
+</div>
+<button class="py-2 px-4 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md font-bold shadow-sm active:scale-95 transition-transform flex items-center gap-1.5" onclick="reviewTableOrder()">
+<span>Send to Kitchen</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</aside>
+<!-- Kitchen & Dietary Steward Assistance Box -->
+<section class="w-full px-margin mt-6">
+<div class="p-4 rounded-xl bg-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-[22px] text-secondary shrink-0 mt-0.5">info</span>
+<div class="flex-1">
+<h4 class="font-headline-sm text-headline-sm text-primary">Allergies & Bespoke Preparation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">
+          Our kitchen works with nuts, heirloom dairy, and wheat. Please inform your table steward of any severe sensitivities or custom seasoning requests before sending your course selection.
+        </p>
+</div>
+</div>
+</section>
+<!-- Editorial Restaurant Brand Footer -->
+<footer class="w-full px-margin mt-8 pb-8 pt-6 bg-surface-container-low flex flex-col items-center text-center">
+<img alt="Brew & Bloom Emblem" class="h-10 w-auto object-contain mb-3 opacity-90" src="https://lh3.googleusercontent.com/aida/ALJJyrB_imgeZhttiK31JRff756J-P2sXM6oNzeDLC-iI84tlI6h1uBs9FVA0VY21ZAdH7qJAXiouMTsFS1wcGH3X3SS1XqYXcj99JayZvu-kwuBI-biEphsZPziONx76tT3opQYRUAdLXQ6QlcOM5hiqun2ryscd_GJnx9rH2r5Fq0z56dOmY4emy-o25Ek1kJfjMF6fbIMuleies2SAMafSkTG37pi-m714lPUcMgAUo4z"/>
+<h4 class="font-headline-sm text-headline-sm text-primary-container tracking-tight">Brew & Bloom</h4>
+<p class="font-label-caps text-label-caps uppercase tracking-widest text-on-tertiary-container mt-0.5">Artisan Café & Bistro</p>
+<div class="w-8 h-[1px] bg-outline-variant my-4"></div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<p class="font-medium text-on-surface">12th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru</p>
+<p>Mon – Thu: 8:00 AM – 11:00 PM</p>
+<p>Fri – Sun: 8:00 AM – 11:30 PM</p>
+</div>
+<!-- Dining Engine Credit & Social -->
+<div class="mt-4 flex flex-col items-center gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">Live Dining Engine v4.2</span>
+<span class="text-outline-variant">•</span>
+<a class="font-label-caps text-label-caps text-primary hover:underline" href="#">@brewandbloombistro</a>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Table 04 Session • QR Guest Verified</p>
+</div>
+</footer>
+</div>
+<!-- Client-side Interactive Micro-interactions -->
+<script>
+  let orderTray = [];
+
+  function addToOrder(name, price) {
+    orderTray.push({ name, price });
+    updateDock();
+    
+    // Light haptic feedback if supported
+    if (window.navigator && window.navigator.vibrate) {
+      window.navigator.vibrate(30);
+    }
+  }
+
+  function updateDock() {
+    const dock = document.getElementById('table-tray-dock');
+    const countEl = document.getElementById('tray-count');
+    const totalEl = document.getElementById('tray-total');
+    
+    if (orderTray.length > 0) {
+      dock.classList.remove('translate-y-24', 'opacity-0');
+      dock.classList.add('translate-y-0', 'opacity-100');
+      countEl.innerText = orderTray.length;
+      const total = orderTray.reduce((acc, item) => acc + item.price, 0);
+      totalEl.innerText = `₹${total.toLocaleString('en-IN')} total`;
+    } else {
+      dock.classList.add('translate-y-24', 'opacity-0');
+      dock.classList.remove('translate-y-0', 'opacity-100');
+    }
+  }
+
+  function reviewTableOrder() {
+    const total = orderTray.reduce((acc, item) => acc + item.price, 0);
+    alert(`Order for Table 04 submitted to kitchen!\nItems: ${orderTray.length}\nTotal: ₹${total.toLocaleString('en-IN')}`);
+    orderTray = [];
+    updateDock();
+  }
+
+  function copyWifi(button) {
+    const label = document.getElementById('wifi-label');
+    const originalText = label.innerText;
+    navigator.clipboard?.writeText('bloom2025');
+    label.innerText = 'Copied!';
+    setTimeout(() => {
+      label.innerText = originalText;
+    }, 2000);
+  }
+
+  function handleServiceCall(button) {
+    const originalText = button.querySelector('span:last-child').innerText;
+    button.querySelector('span:last-child').innerText = 'Steward Alerted';
+    button.classList.add('bg-secondary-container', 'text-on-secondary-container');
+    setTimeout(() => {
+      button.querySelector('span:last-child').innerText = originalText;
+      button.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+    }, 3000);
+  }
+
+  function openBillSummary() {
+    alert('Table 04 Current Bill:\n\nActive Balance: ₹0.00\nPlease add items or request final check with steward.');
+  }
+
+  function notifyAvailability(dishName) {
+    alert(`Thank you. We have notified Chef Sanjeev. You will receive an SMS when ${dishName} is prepped tomorrow.`);
+  }
+
+  function filterCategory(category, button) {
+    const pills = document.querySelectorAll('.category-pill');
+    pills.forEach(pill => {
+      pill.classList.remove('bg-primary-container', 'text-surface-container-lowest', 'shadow-sm');
+      pill.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+    });
+    button.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+    button.classList.add('bg-primary-container', 'text-surface-container-lowest', 'shadow-sm');
+  }
+
+  function toggleDietaryFilter(type, button) {
+    const isActive = button.classList.contains('bg-primary-container');
+    if (isActive) {
+      button.classList.remove('bg-primary-container', 'text-surface-container-lowest');
+      button.classList.add('bg-surface-container-low');
+    } else {
+      button.classList.remove('bg-surface-container-low');
+      button.classList.add('bg-primary-container', 'text-surface-container-lowest');
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe pointer-events-none" data-active-classes="bg-primary-container text-surface shadow-[0_4px_16px_rgba(44,24,16,0.18)]"><div class="mx-auto px-margin pb-3 pt-2 max-w-md w-full flex justify-center pointer-events-auto"><div class="w-full flex items-center justify-between p-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,24,16,0.08)]"><a aria-current="page" class="flex-1 flex flex-col items-center justify-center py-2 px-2 rounded-full transition-all min-h-[44px] bg-primary-container text-surface shadow-[0_4px_16px_rgba(44,24,16,0.18)]" data-path="menu" href="#"><span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span class="font-label-caps text-label-caps mt-0.5">Menu</span></a><a class="flex-1 flex flex-col items-center justify-center py-2 px-2 rounded-full text-on-surface-variant hover:text-on-surface transition-all min-h-[44px]" data-path="chef-specials" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-caps text-label-caps mt-0.5">Specials</span></a><a class="flex-1 flex flex-col items-center justify-center py-2 px-2 rounded-full text-on-surface-variant hover:text-on-surface transition-all min-h-[44px]" data-path="dietary-filter" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-caps text-label-caps mt-0.5">Dietary</span></a><a class="flex-1 flex flex-col items-center justify-center py-2 px-2 rounded-full text-on-surface-variant hover:text-on-surface transition-all min-h-[44px]" data-path="table-service" href="#"><span class="material-symbols-outlined text-[20px]">room_service</span><span class="font-label-caps text-label-caps mt-0.5">Service</span></a></div></div></nav></body></html>
