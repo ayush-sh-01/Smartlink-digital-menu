@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
+const AUTHORIZED_OWNER_EMAIL = 'teamindia6232@gmail.com';
+
 export default function OwnerAuthModal({ isOpen, onClose, onAuthSuccess }) {
-  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -15,23 +16,22 @@ export default function OwnerAuthModal({ isOpen, onClose, onAuthSuccess }) {
     setLoading(true);
     setErrorMsg('');
 
+    // Strict single-owner email check
+    if (email.trim().toLowerCase() !== AUTHORIZED_OWNER_EMAIL.toLowerCase()) {
+      setErrorMsg('Access Denied. Only the authorized administrator account can access this portal.');
+      setLoading(false);
+      return;
+    }
+
     try {
-      if (isLogin) {
-        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
-        if (data.session) {
-          onAuthSuccess(data.session.user);
-          onClose();
-        }
-      } else {
-        const { data, error } = await supabase.auth.signUp({ email, password });
-        if (error) throw error;
-        if (data.session) {
-          onAuthSuccess(data.session.user);
-          onClose();
-        } else {
-          setErrorMsg('Signup successful! Please check your email for confirmation or sign in directly.');
-        }
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email.trim().toLowerCase(),
+        password
+      });
+      if (error) throw error;
+      if (data.session) {
+        onAuthSuccess(data.session.user);
+        onClose();
       }
     } catch (err) {
       setErrorMsg(err.message || 'Authentication failed');
@@ -55,12 +55,10 @@ export default function OwnerAuthModal({ isOpen, onClose, onAuthSuccess }) {
             <span className="material-symbols-outlined text-2xl">local_cafe</span>
           </div>
           <h2 className="font-serif text-2xl font-bold text-primary">
-            {isLogin ? 'Owner Atelier Login' : 'Create Owner Account'}
+            SmartLink Atelier Sign In
           </h2>
           <p className="text-xs text-on-surface-variant mt-1">
-            {isLogin
-              ? 'Enter credentials to manage your digital restaurant menu'
-              : 'Sign up to launch and manage your digital QR menu'}
+            Authorized administrator access only
           </p>
         </div>
 
@@ -72,13 +70,13 @@ export default function OwnerAuthModal({ isOpen, onClose, onAuthSuccess }) {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
           <div>
-            <label className="block text-xs font-semibold text-on-surface mb-1">Email Address</label>
+            <label className="block text-xs font-semibold text-on-surface mb-1">Owner Email</label>
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="owner@smartlink.com"
+              placeholder="teamindia6232@gmail.com"
               className="w-full h-11 px-3.5 rounded-xl bg-surface border border-surface-container text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
@@ -88,7 +86,6 @@ export default function OwnerAuthModal({ isOpen, onClose, onAuthSuccess }) {
             <input
               type="password"
               required
-              minLength={6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
@@ -102,22 +99,9 @@ export default function OwnerAuthModal({ isOpen, onClose, onAuthSuccess }) {
             className="w-full h-11 mt-2 bg-primary-container hover:bg-primary text-on-primary font-semibold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
           >
             {loading && <span className="material-symbols-outlined animate-spin text-[18px]">progress_activity</span>}
-            <span>{isLogin ? 'Sign In to Dashboard' : 'Create Atelier Account'}</span>
+            <span>Sign In to Dashboard</span>
           </button>
         </form>
-
-        <div className="mt-5 text-center">
-          <button
-            type="button"
-            onClick={() => {
-              setIsLogin(!isLogin);
-              setErrorMsg('');
-            }}
-            className="text-xs text-secondary font-semibold hover:underline"
-          >
-            {isLogin ? "Don't have an owner account? Sign Up" : 'Already have an account? Sign In'}
-          </button>
-        </div>
       </div>
     </div>
   );

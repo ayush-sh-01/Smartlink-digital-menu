@@ -5,8 +5,8 @@ export default function QRCodeModal({ isOpen, onClose, restaurant }) {
   const qrRef = useRef();
   if (!isOpen || !restaurant) return null;
 
-  // Permanent QR URL points directly to /menu/:slug
-  const menuUrl = `${window.location.origin}/?menu=${restaurant.slug}`;
+  // Permanent QR URL points directly to home page or /menu/smartlink
+  const menuUrl = window.location.origin;
 
   const handleDownload = () => {
     const svg = document.getElementById('permanent-qr-svg');
